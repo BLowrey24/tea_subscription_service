@@ -13,6 +13,10 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def create
+    if !params[:new_subscription][:teas] || params[:new_subscription][:teas].empty?
+      render json: {errors: "Subscription cannot be empty."}, status: 422
+      return
+    end
     customer = Customer.find_by_id(subscription_params[:customer_id])
     if customer
       if SubscriptionFacade.new_subscription(customer.id, params[:new_subscription])
