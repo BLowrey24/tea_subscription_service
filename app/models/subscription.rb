@@ -4,5 +4,6 @@ class Subscription < ApplicationRecord
   has_many :teas, through: :subscription_teas
 
   validates_presence_of :title
+  validates_inclusion_of :status, in: [true, false]
   validates_numericality_of :frequency
 end
