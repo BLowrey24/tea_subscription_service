@@ -25,10 +25,15 @@ RSpec.describe "Subscription API" do
       expect(response).to have_http_status(200)
     end
 
-    xit "returns the data wanted" do
+   xit "returns the data wanted" do
       post api_v1_customer_subscriptions_path(@customer_1.id), params: @valid_params
 
       expect(response).to be_successful
+      expect(response).to have_http_status(200)
+      data = JSON.parse(response.body, symbolize_names: true)
+      # require 'pry'; binding.pry
+
+      expect(data)
     end
   end
 end
