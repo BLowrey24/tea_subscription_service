@@ -12,6 +12,15 @@ class Api::V1::SubscriptionsController < ApplicationController
     end
   end
 
+  def create
+    customer = Customer.find_by_id(subscription_params[:customer_id])
+    if customer
+      if SubscriptionFacade.new_subscription(customer.id, params[:new_subscription])
+        render json: SubscriptionsSerializer.new(customer.subscriptions)
+      end
+    end
+  end
+
   private
 
   def subscription_params
