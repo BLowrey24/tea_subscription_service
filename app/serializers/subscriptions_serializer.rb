@@ -6,5 +6,7 @@ class SubscriptionsSerializer
     total = subscription.subscription_teas.joins(:tea)
       .group("subscription_teas.id")
       .sum("subscription_teas.quantity * teas.price").values.sum
+
+    total
   end
 end
