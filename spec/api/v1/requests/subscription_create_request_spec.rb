@@ -51,4 +51,19 @@ RSpec.describe "Subscription API" do
       expect(data[:data][1][:attributes][:price]).to be_a Float
     end
   end
+
+  describe "Sad Path" do
+    it "returns an error if the customer does not exist" do
+      post api_v1_customer_subscriptions_path(12345678910), params: @valid_params
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(404)
+
+      error = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(error).to be_a Hash
+      expect(error).to have_key(:errors)
+      expect(error[:errors]).to eq("Customer does not exist.")
+    end
+  end
 end
