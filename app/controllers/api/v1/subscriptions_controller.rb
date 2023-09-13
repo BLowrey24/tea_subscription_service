@@ -18,6 +18,8 @@ class Api::V1::SubscriptionsController < ApplicationController
       if SubscriptionFacade.new_subscription(customer.id, params[:new_subscription])
         render json: SubscriptionsSerializer.new(customer.subscriptions)
       end
+    else
+      render json: {errors: "Customer does not exist."}, status: 404
     end
   end
 
