@@ -15,6 +15,14 @@ RSpec.describe "Subscription API" do
         }
       }
     }
+
+    @there_is_no_tea = {
+      "new_subscription": {
+        "title": "Some stuff a LOTR's character would NOT drink.",
+        "frequency": 5,
+        "teas": {}
+      }
+    }
   end
 
   describe "Happy Path" do
@@ -60,10 +68,22 @@ RSpec.describe "Subscription API" do
       expect(response).to have_http_status(404)
 
       error = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(error).to be_a Hash
       expect(error).to have_key(:errors)
       expect(error[:errors]).to eq("Customer does not exist.")
+    end
+
+    it "returns an error if the teas are empty" do
+      post api_v1_customer_subscriptions_path(@customer_1.id), params: @there_is_no_tea
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(422)
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to be_a Hash
+      expect(error).to have_key(:errors)
+      expect(error[:errors]).to eq("Subscription cannot be empty.")
     end
   end
 end
