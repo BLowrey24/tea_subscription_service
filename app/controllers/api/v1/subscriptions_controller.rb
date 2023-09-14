@@ -21,6 +21,8 @@ class Api::V1::SubscriptionsController < ApplicationController
     if customer
       if SubscriptionFacade.new_subscription(customer.id, params[:new_subscription])
         render json: SubscriptionsSerializer.new(customer.subscriptions)
+      else
+        render json: {errors: "Invalid subscription params."}, status: 400
       end
     else
       render json: {errors: "Customer does not exist."}, status: 404
