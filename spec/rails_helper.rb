@@ -98,7 +98,7 @@ def test_data
 
 
   @subscription_1 = Subscription.create!(customer_id: @customer_1.id, title: "Tea Time with One", status: true, frequency: 1)
-  @subscription_2 = Subscription.create!(customer_id: @customer_7.id, title: "Mom's Tea Surprise", status: true, frequency: 2)
+  @subscription_2 = Subscription.create!(customer_id: @customer_1.id, title: "Mom's Tea Surprise", status: true, frequency: 2)
   @subscription_3 = Subscription.create!(customer_id: @customer_2.id, title: "Frodo's Sip Adventure", status: true, frequency: 3)
   @subscription_4 = Subscription.create!(customer_id: @customer_3.id, title: "Three's Tea Extravaganza", status: false, frequency: 4)
   @subscription_5 = Subscription.create!(customer_id: @customer_3.id, title: "Monthly Tea Quest", status: true, frequency: 5)
@@ -106,7 +106,8 @@ def test_data
   @subscription_7 = Subscription.create!(customer_id: @customer_4.id, title: "Four's Tea Odyssey", status: true, frequency: 7)
   @subscription_8 = Subscription.create!(customer_id: @customer_5.id, title: "Five's Tea Fiesta", status: true, frequency: 8)
   @subscription_9 = Subscription.create!(customer_id: @customer_5.id, title: "Tea for Tiny Tots", status: false, frequency: 9)
-  @subscription_10 = Subscription.create!(customer_id: @customer_6.id, title: "Five's Extraordinary Collection", status: true, frequency: 10)
+  @subscription_10 = Subscription.create!(customer_id: @customer_5.id, title: "Five's Extraordinary Collection", status: true, frequency: 10)
+  @subscription_11 = Subscription.create!(customer_id: @customer_1.id, title: "Blah", status: true, frequency: 2)
 
 
   @subscription_tea_1 = SubscriptionTea.create!(subscription_id: @subscription_1.id, tea_id: @tea_1.id, quantity: 1)
