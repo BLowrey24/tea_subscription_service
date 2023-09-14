@@ -19,7 +19,7 @@ RSpec.describe "Subscription API" do
       returned_data = JSON.parse(response.body, symbolize_names: true)
       expect(returned_data).to have_key(:data)
       expect(returned_data[:data].first[:type]).to eq("subscriptions")
-      expect(returned_data[:data].size).to eq(1)
+      expect(returned_data[:data].size).to eq(3)
       expect(returned_data[:data].first[:id]).to eq(@subscription_1.id.to_s)
 
       attributes = returned_data[:data].first[:attributes]
