@@ -34,6 +34,8 @@ class Api::V1::SubscriptionsController < ApplicationController
     if subscription
       subscription.update(subscription_params)
       render json: SubscriptionsSerializer.new(subscription), status: 204
+    else
+      render json: {errors: "Subscription not found."}, status: 404
     end
   end
 
