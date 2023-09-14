@@ -98,7 +98,7 @@ def test_data
 
 
   @subscription_1 = Subscription.create!(customer_id: @customer_1.id, title: "Tea Time with One", status: true, frequency: 1)
-  @subscription_2 = Subscription.create!(customer_id: @customer_1.id, title: "Mom's Tea Surprise", status: true, frequency: 2)
+  @subscription_2 = Subscription.create!(customer_id: @customer_1.id, title: "Mom's Tea Surprise", status: false, frequency: 2)
   @subscription_3 = Subscription.create!(customer_id: @customer_2.id, title: "Frodo's Sip Adventure", status: true, frequency: 3)
   @subscription_4 = Subscription.create!(customer_id: @customer_3.id, title: "Three's Tea Extravaganza", status: false, frequency: 4)
   @subscription_5 = Subscription.create!(customer_id: @customer_3.id, title: "Monthly Tea Quest", status: true, frequency: 5)
