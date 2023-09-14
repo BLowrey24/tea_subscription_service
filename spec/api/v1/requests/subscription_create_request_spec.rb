@@ -16,6 +16,38 @@ RSpec.describe "Subscription API" do
       }
     }
 
+    @no_title = {
+      "new_subscription": {
+        "frequency": 5,
+        "teas": {
+          "#{@tea_1.id}": 2,
+          "#{@tea_2.id}": 4,
+          "#{@tea_3.id}": 6
+        }
+      }
+    }
+
+    @bad_frequency = {
+      "new_subscription": {
+        "title": "Bad Frequency",
+        "frequency": "not a number",
+        "teas": {
+          "#{@tea_1.id}": 2
+        }
+      }
+    }
+
+    @bad_status = {
+      "new_subscription": {
+        "title": "Bad Status",
+        "frequency": "not a number",
+        "status": "bad",
+        "teas": {
+          "#{@tea_1.id}": 2
+        }
+      }
+    }
+
     @there_is_no_tea = {
       "new_subscription": {
         "title": "Some stuff a LOTR's character would NOT drink.",
@@ -84,6 +116,42 @@ RSpec.describe "Subscription API" do
       expect(error).to be_a Hash
       expect(error).to have_key(:errors)
       expect(error[:errors]).to eq("Subscription cannot be empty.")
+    end
+
+    it "invalid subscription creation due to missing title" do
+      post api_v1_customer_subscriptions_path(@customer_1.id), params: @no_title
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(400)
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to be_a Hash
+      expect(error).to have_key(:errors)
+      expect(error[:errors]).to include("Invalid subscription params.")
+    end
+
+    it "invalid subscription creation due to invalid status" do
+      post api_v1_customer_subscriptions_path(@customer_1.id), params: @bad_status
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(400)
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to be_a Hash
+      expect(error).to have_key(:errors)
+      expect(error[:errors]).to include("Invalid subscription params.")
+    end
+
+    it "invalid subscription creation when frequency isnt a number" do
+      post api_v1_customer_subscriptions_path(@customer_1.id), params: @bad_frequency
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(400)
+      error = JSON.parse(response.body, symbolize_names: true)
+
+      expect(error).to be_a Hash
+      expect(error).to have_key(:errors)
+      expect(error[:errors]).to include("Invalid subscription params.")
     end
   end
 end
