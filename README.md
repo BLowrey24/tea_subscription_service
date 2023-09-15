@@ -79,7 +79,7 @@
 }
 ```
 
-## Response
+## Response:
 
 ```
 {
@@ -101,14 +101,15 @@
 
 ### Cancel One Subscription
 <p> Patch '/api/v1/customers/:customer_id/subscriptions/:id’ </p>
-<p> Example of the body details to be provided when deleting a user </p>
+<p> Example of the body details that must be provided when canceling a subscription </p>
 
 ```
 {
   "status": false
 }
 ```
-## Response
+
+## Response:
 ```
 {
     "data": {
