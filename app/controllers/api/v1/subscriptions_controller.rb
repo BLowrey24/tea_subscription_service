@@ -20,7 +20,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     customer = Customer.find_by_id(subscription_params[:customer_id])
     if customer
       if SubscriptionFacade.new_subscription(customer.id, params[:new_subscription])
-        render json: SubscriptionsSerializer.new(customer.subscriptions)
+        render json: SubscriptionsSerializer.new(customer.subscriptions.last)
       else
         render json: {errors: "Invalid subscription params."}, status: 400
       end

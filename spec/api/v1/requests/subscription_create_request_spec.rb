@@ -72,23 +72,23 @@ RSpec.describe "Subscription API" do
       expect(response).to have_http_status(200)
       data = JSON.parse(response.body, symbolize_names: true)
 
-      expect(data[:data][3]).to have_key(:id)
-      expect(data[:data][3][:id]).to be_a String
-      expect(data[:data][3]).to have_key(:type)
-      expect(data[:data][3][:type]).to eq("subscriptions")
-      expect(data[:data][3]).to have_key(:attributes)
-      expect(data[:data][3][:attributes]).to be_a Hash
+      expect(data[:data]).to have_key(:id)
+      expect(data[:data][:id]).to be_a String
+      expect(data[:data]).to have_key(:type)
+      expect(data[:data][:type]).to eq("subscriptions")
+      expect(data[:data]).to have_key(:attributes)
+      expect(data[:data][:attributes]).to be_a Hash
 
-      expect(data[:data][3][:attributes]).to have_key(:customer_id)
-      expect(data[:data][3][:attributes][:customer_id]).to be_a Integer
-      expect(data[:data][3][:attributes]).to have_key(:title)
-      expect(data[:data][3][:attributes][:title]).to be_a String
-      expect(data[:data][3][:attributes]).to have_key(:status)
-      expect(data[:data][3][:attributes][:status]).to eq(true)
-      expect(data[:data][3][:attributes]).to have_key(:frequency)
-      expect(data[:data][3][:attributes][:frequency]).to be_a Integer
-      expect(data[:data][3][:attributes]).to have_key(:price)
-      expect(data[:data][3][:attributes][:price]).to be_a Float
+      expect(data[:data][:attributes]).to have_key(:customer_id)
+      expect(data[:data][:attributes][:customer_id]).to be_a Integer
+      expect(data[:data][:attributes]).to have_key(:title)
+      expect(data[:data][:attributes][:title]).to be_a String
+      expect(data[:data][:attributes]).to have_key(:status)
+      expect(data[:data][:attributes][:status]).to eq(true)
+      expect(data[:data][:attributes]).to have_key(:frequency)
+      expect(data[:data][:attributes][:frequency]).to be_a Integer
+      expect(data[:data][:attributes]).to have_key(:price)
+      expect(data[:data][:attributes][:price]).to be_a Float
     end
   end
 
