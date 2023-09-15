@@ -1,4 +1,18 @@
-# Tea Subscription Service
+<h1> Tea Subscription Service </h1>
+
+<br>
+
+# Tech
+<ul>
+  <li>Ruby 3.2.2</li>
+  <li>Rails 7.0.8</li>
+  <li>RSpec</li>
+  <li>simplecov</li>
+  <li>Pry</li>
+  <li>jsonapi-serializer</li>
+</ul>
+
+<br><br>
 
 # JSON Contracts
 
@@ -111,3 +125,8 @@
 }
 ```
 
+<br>
+
+# Schema
+
+<img alt="this app's database schema" src="https://snipboard.io/yKCTuU.jpg">
