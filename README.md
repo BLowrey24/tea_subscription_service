@@ -1,5 +1,11 @@
 <h1> Tea Subscription Service </h1>
 
+A simpile tea subscription back end API with three endpoints:
+
+1. An endpoint to subscribe a customer to a tea subscription
+2. An endpoint to cancel a customer's tea subscription
+3. An endpoint to see all of a customer's subscriptions (active and cancelled)
+
 <br>
 
 # Tech
