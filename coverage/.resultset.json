@@ -171,7 +171,178 @@
           1,
           1,
           1,
+          1,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/spec/api/v1/requests/subscription_show_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/spec/models/customer_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/models/customer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/spec/models/subscription_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/models/subscription.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/spec/models/subscription_tea_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/models/subscription_tea.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/spec/models/tea_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
           null,
           null
         ]
@@ -190,36 +361,100 @@
           null
         ]
       },
-      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/models/application_record.rb": {
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/controllers/api/v1/subscriptions_controller.rb": {
         "lines": [
           1,
+          1,
+          4,
+          4,
+          3,
+          1,
+          null,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          7,
+          1,
+          1,
+          null,
+          6,
+          6,
+          5,
+          2,
+          null,
+          3,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          10,
+          null,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/controllers/application_controller.rb": {
+        "lines": [
           1,
           null
         ]
       },
-      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/models/subscription_tea.rb": {
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/facades/subscription_facade.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          5,
+          2,
+          6,
+          6,
+          6,
+          null,
+          null,
+          null,
+          3,
+          null,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/serializers/subscriptions_serializer.rb": {
         "lines": [
           1,
           1,
           1,
           null,
           1,
-          null
-        ]
-      },
-      "/Users/bostonlowrey/turing/4mod/projects/tea_subscription_service/app/models/subscription.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
+          14,
           null,
-          1,
-          1,
+          null,
+          null,
+          14,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1694548036
+    "timestamp": 1694739958
   }
 }
